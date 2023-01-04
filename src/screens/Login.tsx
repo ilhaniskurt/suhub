@@ -6,8 +6,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Please Log In</h1>
+    <div className="login-wrapper">
+      <h1>SUHUB</h1>
       <form onSubmit={handleLogin}>
         <label>
           <p>Username</p>
