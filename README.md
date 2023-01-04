@@ -1,2 +1,2 @@
 # suhub
-Portal with ease of access for Sabanci University students
+Student portal with ease of access in mind for Sabanci University students
