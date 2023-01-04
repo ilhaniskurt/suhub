@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log(username)
+    console.log(password)
   };
 
   return (
@@ -11,11 +16,11 @@ const Login = () => {
       <form onSubmit={handleLogin}>
         <label>
           <p>Username</p>
-          <input type="text" />
+          <input type="text" onChange={e => setUsername(e.target.value)}/>
         </label>
         <label>
           <p>Password</p>
-          <input type="password" />
+          <input type="password" onChange={e => setPassword(e.target.value)}/>
         </label>
         <div>
           <button type="submit">Login</button>
