@@ -1,11 +1,13 @@
-import React from 'react';
-import './App.css';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useState } from "react";
+import "./App.css";
+import Dashboard from "./screens/Dashboard";
+import Login from "./screens/Login";
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  )
-}
+const App = () => {
+  const [token, setToken] = useState();
+
+  return <>{token ? <Dashboard /> : <Login />}</>;
+};
 
 export default App;
