@@ -11,7 +11,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-wrapper">
+    <div className="text-center text-blue-400">
       <h1>SUHUB</h1>
       <form onSubmit={handleLogin}>
         <label>
