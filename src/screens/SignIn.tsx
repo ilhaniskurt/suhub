@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const SignIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,9 +13,7 @@ const Login = () => {
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <h1
-          className="flex items-center mb-9 text-5xl font-bold text-gray-900 dark:text-white"
-        >
+        <h1 className="flex items-center mb-9 text-5xl font-semibold text-gray-900 dark:text-white">
           SUHUB
         </h1>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -76,12 +74,6 @@ const Login = () => {
                     </label>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Forgot password?
-                </a>
               </div>
               <button
                 type="submit"
@@ -89,15 +81,6 @@ const Login = () => {
               >
                 Sign in
               </button>
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don’t have an account yet?{" "}
-                <a
-                  href="#"
-                  className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Sign up
-                </a>
-              </p>
             </form>
           </div>
         </div>
@@ -106,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Dashboard from "./screens/Dashboard";
-import Login from "./screens/Login";
+import SignIn from "./screens/SignIn";
 
 const App = () => {
   const [token, setToken] = useState();
 
-  return <>{token ? <Dashboard /> : <Login />}</>;
+  return <>{token ? <Dashboard /> : <SignIn />}</>;
 };
 
 export default App;
