@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import Dashboard from "./screens/Dashboard";
 import Login from "./screens/Login";
 
