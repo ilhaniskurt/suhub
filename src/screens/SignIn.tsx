@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, Dispatch, SetStateAction, FormEvent, FC } from "react";
 import {
   Background,
   Card,
@@ -10,22 +10,30 @@ import {
 } from "../helpers/components";
 import { tryLogin } from "../services/auth";
 
-const SignIn = () => {
+type AuthProps = {
+  setAuth: Dispatch<SetStateAction<boolean>>;
+};
+
+const SignIn: FC<AuthProps> = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [info, setInfo] = useState("");
   const [remember, setRemember] = useState(false);
 
   const handleRememberMe = () => {
     setRemember(!remember);
   };
 
-  const handleSignIn = async (e: React.FormEvent) => {
+  const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
-    console.log(remember);
-    console.log(username);
-    console.log(password);
-    await tryLogin(username, password);
+    setInfo('')
+    const error = await tryLogin(username, password);
+    if (error) {
+      setInfo(error)
+    } else {
+      setInfo("")
+      props.setAuth(true);
+    }
   };
 
   return (
@@ -53,6 +61,7 @@ const SignIn = () => {
             </Input>
             <div className="flex items-center justify-between">
               <CheckBox flip={handleRememberMe}>Remember me</CheckBox>
+            <p className="text-sm font-light text-red-400 dark:text-red-200">{info}</p>
             </div>
             <PrimaryButton>Sign in</PrimaryButton>
           </form>
