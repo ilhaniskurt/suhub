@@ -11,7 +11,7 @@ type InputProps = {
   onChange: Dispatch<SetStateAction<string>>;
 };
 
-type CheckboxProps = {
+type CheckBoxProps = {
   children: ReactNode;
   id: string;
   flip: () => void;
@@ -75,18 +75,25 @@ export const PrimaryButton: FC<Props> = (props) => {
   );
 };
 
-export const CheckBox: FC<CheckboxProps> = (props) => {
+export const CheckBox: FC<CheckBoxProps> = (props) => {
   return (
     <div className="flex items-start">
       <div className="flex items-center h-5">
         <input
           id={props.id}
           type="checkbox"
-          className={"peer/" + props.id + " w-4 h-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"}
+          className={
+            "peer w-4 h-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+          }
           onChange={props.flip}
           required={undefined}
         />
-        <label htmlFor={props.id} className={"peer-checked/" + props.id +":text-sky-500 ml-3 text-sm text-gray-500 dark:text-gray-300"}>
+        <label
+          htmlFor={props.id}
+          className={
+            "peer-checked:text-sky-500 ml-3 text-sm text-gray-500 dark:text-gray-300"
+          }
+        >
           {props.children}
         </label>
       </div>
@@ -269,4 +276,8 @@ export const Table = () => {
       </div>
     </div>
   );
+};
+
+export const Course = () => {
+  return <div></div>;
 };
