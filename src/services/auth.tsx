@@ -8,17 +8,12 @@ export const tryLogin = async (username: string, password: string) => {
     try {
         const response = await axios.post('/login', {username: username, password: password})
         axios.defaults.data = response.data
-        console.log('Login Successful')
         return null
     } catch (error) {
         if (isAxiosError(error)) {
-            console.log(error.response?.data)
-            console.error('Login Failed')
-            return error.response?.data
+            return error.response ? error.response?.data : 'Service Unavailable'
         } else {
-            console.error('Service Unavailable')
-            console.error(error)
-            return error
+            return 'Service Unavailable'
         }
     }
 };

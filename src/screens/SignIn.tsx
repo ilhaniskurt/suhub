@@ -26,7 +26,7 @@ const SignIn: FC<AuthProps> = (props) => {
 
   const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
-    setInfo('')
+    setInfo("")
     const error = await tryLogin(username, password);
     if (error) {
       setInfo(error)
