@@ -5,7 +5,7 @@ import SignIn from "./screens/SignIn";
 const App = () => {
   const [auth, setAuth] = useState(false);
 
-  return <>{auth ? <Dashboard /> : <SignIn setAuth={setAuth}/>}</>;
+  return <>{auth ? <Dashboard /> : <SignIn setAuth={setAuth} />}</>;
 };
 
 export default App;
