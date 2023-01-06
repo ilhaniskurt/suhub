@@ -13,6 +13,7 @@ type InputProps = {
 
 type CheckboxProps = {
   children: ReactNode;
+  id: string;
   flip: () => void;
 };
 
@@ -79,14 +80,13 @@ export const CheckBox: FC<CheckboxProps> = (props) => {
     <div className="flex items-start">
       <div className="flex items-center h-5">
         <input
+          id={props.id}
           type="checkbox"
-          className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+          className={"peer/" + props.id + " w-4 h-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"}
           onChange={props.flip}
           required={undefined}
         />
-      </div>
-      <div className="ml-3 text-sm">
-        <label className="text-gray-500 dark:text-gray-300">
+        <label htmlFor={props.id} className={"peer-checked/" + props.id +":text-sky-500 ml-3 text-sm text-gray-500 dark:text-gray-300"}>
           {props.children}
         </label>
       </div>
@@ -134,287 +134,133 @@ export const Table = () => {
                   <td className="px-6 py-4 whitespace-nowrap font-medium">
                     8:40 - 9:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     9:40 - 10:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     10:40 - 11:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     11:40 - 12:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     12:40 - 13:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     13:40 - 14:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     14:40 - 15:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     15:40 - 16:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     16:40 - 17:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     17:40 - 18:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
                 <tr className="border-b">
-                <td className="px-6 py-4 whitespace-nowrap font-medium">
+                  <td className="px-6 py-4 whitespace-nowrap font-medium">
                     18:40 - 19:30
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    Empty
-                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
+                  <td className="px-6 py-4 whitespace-nowrap">Empty</td>
                 </tr>
               </tbody>
             </table>

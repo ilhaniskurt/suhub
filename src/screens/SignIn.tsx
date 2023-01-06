@@ -60,7 +60,7 @@ const SignIn: FC<AuthProps> = (props) => {
               Your password
             </Input>
             <div className="flex items-center justify-between">
-              <CheckBox flip={handleRememberMe}>Remember me</CheckBox>
+              <CheckBox id="remember" flip={handleRememberMe}>Remember me</CheckBox>
             <p className="text-sm font-light text-red-400 dark:text-red-200">{info}</p>
             </div>
             <PrimaryButton>Sign in</PrimaryButton>
