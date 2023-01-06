@@ -1,5 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from "react";
+import axios from "axios";
 
-const tryLogin = async () => {
-    
-}
+export const tryLogin = async (username: string, password: string) => {};

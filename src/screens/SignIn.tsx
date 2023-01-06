@@ -8,6 +8,7 @@ import {
   Input,
   PrimaryButton,
 } from "../helpers/components";
+import { tryLogin } from "../services/auth";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -24,6 +25,7 @@ const SignIn = () => {
     console.log(remember);
     console.log(username);
     console.log(password);
+    await tryLogin(username, password);
   };
 
   return (
