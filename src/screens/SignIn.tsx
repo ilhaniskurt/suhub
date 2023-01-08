@@ -1,4 +1,4 @@
-import { useState, Dispatch, SetStateAction, FormEvent, FC } from "react";
+import { useState, FormEvent, FC } from "react";
 import {
   Background,
   Card,
@@ -7,12 +7,9 @@ import {
   Header,
   Input,
   PrimaryButton,
-} from "../helpers/components";
+} from "../components/common";
+import { AuthProps } from "../helpers/props";
 import { tryLogin } from "../services/auth";
-
-type AuthProps = {
-  setAuth: Dispatch<SetStateAction<boolean>>;
-};
 
 const SignIn: FC<AuthProps> = (props) => {
   const [username, setUsername] = useState("");
@@ -26,13 +23,13 @@ const SignIn: FC<AuthProps> = (props) => {
 
   const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
-    setInfo("")
-    const error = await tryLogin(username, password);
+    setInfo("");
+    const [auth, error] = await tryLogin(username, password);
     if (error) {
-      setInfo(error)
+      setInfo(error);
     } else {
-      setInfo("")
-      props.setAuth(true);
+      setInfo("");
+      props.setAuth(auth);
     }
   };
 
@@ -60,8 +57,12 @@ const SignIn: FC<AuthProps> = (props) => {
               Your password
             </Input>
             <div className="flex items-center justify-between">
-              <CheckBox id="remember" flip={handleRememberMe}>Remember me</CheckBox>
-            <p className="text-sm font-light text-red-400 dark:text-red-200">{info}</p>
+              <CheckBox id="remember" flip={handleRememberMe}>
+                Remember me
+              </CheckBox>
+              <p className="text-sm font-light text-red-400 dark:text-red-200">
+                {info}
+              </p>
             </div>
             <PrimaryButton>Sign in</PrimaryButton>
           </form>

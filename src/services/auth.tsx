@@ -1,6 +1,8 @@
 import axios, { isAxiosError } from "axios";
 
 axios.defaults.baseURL = "http://127.0.0.1:8000";
+axios.defaults.headers.common["accept"] = "application/json";
+axios.defaults.headers.common["Content-Type"] = "application/json";
 
 export const tryLogin = async (username: string, password: string) => {
   try {
@@ -8,15 +10,15 @@ export const tryLogin = async (username: string, password: string) => {
       username: username,
       password: password,
     });
-    console.log(JSON.stringify(response.data));
-    axios.defaults.data = response.data;
-    return null;
+    return [response.data, null];
   } catch (error) {
     if (isAxiosError(error)) {
-      return error.response ? error.response?.data : "Service Unavailable";
+      return error.response
+        ? [null, error.response?.data]
+        : [null, "Service Unavailable"];
     } else {
       console.log(error);
-      return "Unexpected Error";
+      return [null, "Unexpected Error"];
     }
   }
 };

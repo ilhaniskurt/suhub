@@ -1,22 +1,22 @@
-import axios from "axios";
-import { useEffect } from "react";
-import { Background, Table, Card, ColumnWrapper } from "../helpers/components";
+import { useEffect, FC } from "react";
 
+import { Background, Table, Card, ColumnWrapper } from "../components/common";
 import { trySchedule } from "../services/schedule";
+import { AuthProps } from "../helpers/props";
 
-const Dashboard = () => {
+const Dashboard: FC<AuthProps> = (props) => {
   useEffect(() => {
     const inEffect = async () => {
-      const data = await trySchedule();
+      const data = await trySchedule(props.auth);
       if (data) {
         console.log(data);
       } else {
         console.warn("Schedule fetching failed");
       }
     };
+    console.log(props.auth);
     inEffect();
-    console.log(axios.defaults.data);
-  }, []);
+  });
 
   return (
     <Background>

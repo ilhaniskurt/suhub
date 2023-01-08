@@ -1,26 +1,10 @@
-import { ReactNode, FC, Dispatch, SetStateAction } from "react";
-
-type Props = {
-  children: ReactNode;
-};
-
-type InputProps = {
-  children: ReactNode;
-  type: string;
-  placeholder: string;
-  onChange: Dispatch<SetStateAction<string>>;
-};
-
-type CheckBoxProps = {
-  children: ReactNode;
-  id: string;
-  flip: () => void;
-};
-
-type CourseProps = {
-  title: string;
-  location: string;
-};
+import { FC } from "react";
+import {
+  Props,
+  CheckBoxProps,
+  CourseProps,
+  InputProps,
+} from "../helpers/props";
 
 export const Background: FC<Props> = (props) => {
   return (
