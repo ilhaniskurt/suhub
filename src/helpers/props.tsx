@@ -26,3 +26,7 @@ export type CourseProps = {
   title: string;
   location: string;
 };
+
+export type TableProps = {
+  courseData: any;
+};
