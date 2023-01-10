@@ -1,6 +1,6 @@
 import axios, { isAxiosError } from "axios";
 
-axios.defaults.baseURL = "https://suhub-api.herokuapp.com";
+axios.defaults.baseURL = "https://vgej94.deta.dev";
 axios.defaults.headers.common["accept"] = "application/json";
 axios.defaults.headers.common["Content-Type"] = "application/json";
 
