@@ -11,8 +11,8 @@ export const DashboardWrapper: FC<Props> = (props) => {
 
 export const ClickableCard: FC<ClickableProps> = (props) => {
   return (
-    <div onClick={props.onClick} className="transition-all cursor-pointer hover:scale-110 min-w-fit bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-      <div className="p-6 space-y-4 md:space-y-6 sm:p-8">{props.children}</div>
+    <div onClick={props.onClick} className="transition-all cursor-pointer hover:scale-110 min-w-fit bg-white rounded-3xl shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+      <div className="flex flex-col text-center items-center p-12 space-y-4 md:space-y-6 sm:p-10">{props.children}</div>
     </div>
   );
 };
