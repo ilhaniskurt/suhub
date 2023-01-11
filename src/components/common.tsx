@@ -15,7 +15,7 @@ export const Header: FC<Props> = (props) => {
   );
 };
 
-export const ColumnWrapper: FC<Props> = (props) => {
+export const Wrapper: FC<Props> = (props) => {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       {props.children}

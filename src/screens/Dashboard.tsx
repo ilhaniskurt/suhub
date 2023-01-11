@@ -1,34 +1,47 @@
-import { useEffect, FC, useState } from "react";
+import { FC, useState } from "react";
 
-import { Background, Card, ColumnWrapper } from "../components/common";
-import { Table } from "../components/dashboard";
-import { trySchedule } from "../services/schedule";
+import { Background } from "../components/common";
+import { DashboardWrapper, ClickableCard } from "../components/dashboard";
 import { AuthProps } from "../helpers/props";
+import Schedule from "./Schedule";
 
 const Dashboard: FC<AuthProps> = (props) => {
+  const [dashboard, setDashboard] = useState(true);
 
-  const [ courseData, setCourseData] = useState();
+  const routes = {
+    profile: "",
+    schedule: <Schedule auth={props.auth} setAuth={props.setAuth} />,
+    transcript: "",
+  };
+  type routeKey = keyof typeof routes;
 
-  useEffect(() => {
-    const inEffect = async () => {
-      const data = await trySchedule(props.auth);
-      if (data) {
-        setCourseData(data);
-      } else {
-        console.warn("Schedule fetching failed");
-      }
-    };
-    inEffect();
-  }, [props.auth]);
+  const [route, setRoute] = useState<routeKey>("profile");
+
+  const handleAction = (route: string) => {
+    setRoute(route as routeKey);
+    setDashboard(false);
+  };
 
   return (
-    <Background>
-      <ColumnWrapper>
-        <Card>
-          <Table courseData={courseData}/>
-        </Card>
-      </ColumnWrapper>
-    </Background>
+    <>
+      {dashboard ? (
+        <Background>
+          <DashboardWrapper>
+            <ClickableCard onClick={() => handleAction("profile")}>
+              Profile
+            </ClickableCard>
+            <ClickableCard onClick={() => handleAction("schedule")}>
+              Schedule
+            </ClickableCard>
+            <ClickableCard onClick={() => handleAction("transcript")}>
+              Transcript
+            </ClickableCard>
+          </DashboardWrapper>
+        </Background>
+      ) : (
+        <>{routes[route]}</>
+      )}
+    </>
   );
 };
 

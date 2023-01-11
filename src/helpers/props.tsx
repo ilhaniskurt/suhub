@@ -9,6 +9,11 @@ export type Props = {
   children: ReactNode;
 };
 
+export type ClickableProps = {
+  onClick: () => void;
+  children: ReactNode;
+};
+
 export type InputProps = {
   children: ReactNode;
   type: string;

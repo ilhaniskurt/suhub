@@ -3,7 +3,7 @@ import {
   Background,
   Card,
   CheckBox,
-  ColumnWrapper,
+  Wrapper,
   Header,
   Input,
   PrimaryButton,
@@ -35,7 +35,7 @@ const SignIn: FC<AuthProps> = (props) => {
 
   return (
     <Background>
-      <ColumnWrapper>
+      <Wrapper>
         <Header>SUHUB</Header>
         <Card>
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -67,7 +67,7 @@ const SignIn: FC<AuthProps> = (props) => {
             <PrimaryButton>Sign in</PrimaryButton>
           </form>
         </Card>
-      </ColumnWrapper>
+      </Wrapper>
     </Background>
   );
 };
